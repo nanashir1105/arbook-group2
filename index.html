@@ -118,14 +118,14 @@
         Sertai kami dalam pengembaraan ini, di mana kreativiti memenuhi teknologi untuk mencipta pengalaman buku AR yang unik dan menarik! </p>
     </header>
 
-    <section>
+   <section>
         <h2>Sila Pilih Bahasa:</h2>
         <label for="language1">
-            <input type="radio" id="language1" name="language" value="Bahasa Melayu" checked>
+            <input type="radio" id="language1" name="language" value="Bahasa Melayu" onclick="navigateToBahasaMelayu()" checked>
             Bahasa Melayu
         </label>
         <label for="language2">
-            <input type="radio" id="language2" name="language" value="Dusun">
+            <input type="radio" id="language2" name="language" value="Dusun" onclick="navigateToDusun()">
             Dusun
         </label>
     </section>
@@ -149,6 +149,13 @@
             var rotation = scrollValue * 180;
             document.getElementById('book').style.transform = 'rotateY(' + rotation + 'deg)';
         });
+    function navigateToBahasaMelayu() {
+        window.location.href = 'http://localhost/jannah/lectures/ARBook/Group%202/BM/';
+    }
+
+    function navigateToDusun() {
+        window.location.href = 'http://localhost/jannah/lectures/ARBook/Group%202/Dusun/';
+    }
     </script>
 
     </body>
