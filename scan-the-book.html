@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+
+     <!-- Video background -->
+     <div id="video-container">
+        <video id="video-background" autoplay muted loop>
+            <source src="scanthebookbg.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scan The Book</title>
+    <style>
+        body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        margin: 0;
+        padding: 0;
+        perspective: 1000px;
+        height: 100vh; /* Corrected the height property value */
+    }
+    nav {
+            background-color: #12251b;
+            overflow: hidden;
+        }
+
+        nav a {
+            float: left;
+            display: block;
+            color: rgb(240, 235, 235);
+            text-align: center;
+            padding: 20px 22px;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+
+        nav a:hover {
+            background-color: #75e4bd;
+        }
+        html {
+        box-sizing: border-box;
+        }
+
+        *, *:before, *:after {
+        box-sizing: inherit;
+        }
+
+        header {
+        background-color: #133a29;
+        color: rgb(255, 249, 249);
+        text-align: center;
+        padding: 2em;
+        animation: headerAnimation 3s infinite alternate; /* Adjust the duration and animation type as needed */
+    }
+
+    @keyframes headerAnimation {
+        from {
+        background-color: #5dd6df; /* Start color */
+        }
+        to {
+        background-color: #255752; /* End color */
+        }
+    }
+
+        #book {
+            width: 700px;
+            height: 800px;
+            margin: 20px auto;
+            position: relative;
+            transform-style: preserve-3d;
+            transform-origin: center;
+            transform: rotateY(0deg);
+            transition: transform 1s;
+        }
+
+        .page {
+            position: absolute;
+            width: 100%;
+            height: 70%;
+            background-color: #e4fdf5;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            backface-visibility: hidden;
+        }
+
+        .page.flipped {
+            transform: rotateY(-180deg);
+        }
+
+        footer {
+            background-color: #617c6e;
+            color: #333;
+            text-align: center;
+            padding: 1em;
+            position: absolute;
+            width: 100%;
+        }
+
+        @media screen and (max-width: 650px) {.column {
+        width: 100%;
+        display: block;
+    }
+    }
+        .page img {
+            max-width: 100%;
+            max-height: 300%;
+            margin-top: 10px;
+        }
+
+        /* Video container */
+        #video-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: -1; /* Place the video behind other elements */
+        }
+
+        /* Style for the video element */
+        #video-background {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="home.html">Home</a>
+        <a href="story-synopsis.html">Sinopsis Buku Cerita</a>
+        <a href="scan-the-book.html">Sila Imbas Buku Disini!</a>
+        <a href="about-us.html">Mengenai Kami</a>
+    </nav>
+
+    <header>
+        <h1>Imbas Buku Disini!</h1>
+        <p>Pengalaman Anda Bersama Buku AR</p>
+    </header>
+
+    <!-- Book Pages -->
+    <div id="book">
+        <!-- Back Page -->
+       <div class="page">
+            <h2>Terima Kasih!</h2>
+            <img src="picture/back.png" alt="Image">
+        </div>
+                
+        <!-- Middle Pages -->
+        <div class="page">
+            <h2>Cerita Tamat.</h2>
+            <img src="picture/ten.png" alt="Image">
+        </div>
+
+        <div class="page">
+            <img src="picture/nine.png" alt="Image">
+            <h2>M/S 9</h2>
+        </div>
+
+        <div class="page">
+            <img src="picture/eight.png" alt="Image">
+            <h2>M/S 8</h2>
+        </div>
+
+        <div class="page">
+            <img src="picture/seven.png" alt="Image">
+            <h2>M/S 7</h2>
+        </div>
+
+        <div class="page">
+            <img src="picture/six.png" alt="Image">
+            <h2>M/S 6</h2>
+        </div>
+
+        <div class="page">
+            <img src="picture/five.png" alt="Image">
+            <h2>M/S 5</h2>
+        </div>
+
+        <div class="page">
+            <img src="picture/four.png" alt="Image">
+            <h2>M/S 4</h2>
+        </div>
+
+        <div class="page">
+            <img src="picture/three.png" alt="Image">
+            <h2>M/S 3</h2>
+        </div>
+
+        <div class="page">
+            <img src="picture/two.png" alt="Image">
+            <h2>M/S 2</h2>
+        </div>
+
+        <div class="page">
+            <img src="picture/one.png" alt="Image">
+            <h2>M/S 1</h2>
+        </div>
+
+        <!-- Front Page -->
+       <div class="page">
+        <h2>Buka Cerita "Kura-Kura & Monyet"</h2>
+            <img src="picture/front.png" alt="Image">
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 KURA-KURA & MONYET. ARBook (Group2). UMSKAL</p>
+    </footer>
+
+    <script>
+        var book = document.getElementById('book');
+        var pages = document.querySelectorAll('.page');
+        var currentPage = 0;
+    
+        // Add click event listener to flip the book to the left
+        book.addEventListener('click', function (event) {
+            var mouseX = event.clientX;
+            var halfWindowWidth = window.innerWidth / 2;
+    
+            if (mouseX < halfWindowWidth) {
+                // Flip to the left
+                pages[currentPage].classList.toggle('flipped');
+                currentPage = (currentPage + 1) % pages.length;
+            } else {
+                // Flip to the right
+                currentPage = (currentPage - 1 + pages.length) % pages.length;
+                pages[currentPage].classList.toggle('flipped');
+            }
+        });
+
+    </script>
+    
+</body>
+</html>

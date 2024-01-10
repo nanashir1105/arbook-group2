@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sinopsis Cerita</title>
+    <style>
+        body {
+            font-family: 'Comic Sans MS', cursive;
+            background: url('frontpage.png') center/cover fixed; /* Replace 'your-image-url.jpg' with the path to your own image */
+            color: #0a0a0a;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 1.vh;
+        }
+
+        #story-container {
+            max-width: 600px;
+            text-align: center;
+            padding: 60px;
+            background-color: rgba(255, 255, 255, 0.397);
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        }
+
+        h1 {
+            color: #000000;
+        }
+
+        #story-text {
+            font-size: 18px;
+        }
+
+        #show-more-btn {
+            background-color: #0c5353;
+            color: #ffffff;
+            border: none;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        #show-more-btn:hover {
+            background-color: #FF9800;
+        }
+
+         /* Video container */
+         #video-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: -1; /* Place the video behind other elements */
+        }
+
+        /* Style for the video element */
+        #video-background {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    </style>
+</head>
+<body>
+    <!-- Video background -->
+    <div id="video-container">
+        <video id="video-background" autoplay muted loop>
+            <source src="trailer/synopsisbg.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+
+    <div id="story-container">
+        <h1>Pada suatu masa dahulu...</h1>
+        <p id="story-text">Kisah bermula dengan Si Kura-Kura yang tinggal di dalam rimba yang belum pernah diteroka
+            manusia. Si Kura-Kura dikenali sebagai makhluk yang baik hati dan rajin. Suatu hari, dia
+            menerima berita sedih tentang sakit tua ayahnya. Sebelum ayahnya meninggal, ayah
+            memberikan wasiat terakhir untuk berkahwin dengan anak seorang rakan karibnya.
+            Meskipun kesedihan melanda, Si Kura-Kura menunaikan wasiat ayahnya. Dia menikahi anak rakan
+            ayahnya, dan kehidupannya nampak bahagia bersama isteri yang dicintainya. Namun,
+            kebahagiaan itu terusik apabila isterinya mengidamkan buah pisang emas dari kebun peninggalan
+            ayahnya. Si Kura-Kura berusaha untuk memenuhi keinginan isterinya, tetapi dalam usaha tersebut, dia
+            bertemu dengan Si Monyet yang licik. Si Monyet menawarkan bantuan, namun sebenarnya, dia
+            hanya menginginkan pisang emas untuk dirinya sendiri. Si Monyet mengambil kesempatan,
+            memakan pisang emas tersebut, dan meninggalkan Si Kura-Kura dalam kekecewaan.Sesampai sahaja di pangkuan isterinya, si Kura-Kura menceritakan perkara yang telah berlaku.
+            Isterinya menjadi sangat berang dengan cerita Si Kura- Kura yang dianggapnya satu penipuan.
+            Keesokan hari nya, Isteri Si Kura-Kura melarikan diri kerana kelemahan dirinya yang senang
+            ditipu. Dengan hati penuh dendam, Si Kura-Kura merancang balas dendam terhadap Si Monyet. Dia
+            membuat perangkap dengan buluh yang tajam di dalam semak yang disediakan olehnya. Si Kura-
+            Kura menggunakan cerita palsu tentang ancaman pemburu untuk memerangkap Si Monyet
+            kedalam perangkapnya. Si Kura-Kura berjaya dengan rancangannya untuk membunuh Si Monyet.  
+            Tanpa berlengah, Si Kura-Kura segera membawa mayat Si Monyet ke dalam hutan. Dengan
+            terlihat seperti hilang akal, Si Kura-Kura memasak bangkai Si Monyet di tengah bara api yang di
+            sediakannya. . Dengan perasaan yang penuh kepuasan kerana dapat membunuh Si Monyet yang
+            dianggapnya sebagai punca kemusnahan hidupnya, dia terus memakan bangkai monyet tersebut. Tiba-tiba, sekumpulan monyet muncul, mencari sesuatu. Salah satu monyet melihat Si Kura-Kura
+            makan di bawah pokok dan bertanya tentang apa yang dimakannya. Si Kura-Kura, tanpa terkejut,
+            menjawab santai. Monyet tersebut menyatakan sedang mencari anak buah keluarganya, dan
+            menanyakan apakah Si Kura-Kura melihat monyet muda nakal. Si Kura-Kura, yang menyedari
+            bahawa monyet yang dimakannya adalah yang dicari, berbohong dan menyatakan tidak melihat
+            monyet tersebut.
+        </p>
+        <button id="show-more-btn" onclick="showMore()">Show More</button>
+
+        <a href="home.html" style="text-decoration: none;">
+            <button style="background-color: #125353; color: #ffffff; border: none; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; font-size: 16px; border-radius: 4px; cursor: pointer; transition: background-color 0.3s ease;">
+                Back to Home
+            </button>
+        </a>
+    </div>
+
+    <script>
+        const storyTextElement = document.getElementById('story-text');
+        const showMoreBtn = document.getElementById('show-more-btn');
+
+        function showMore() {
+            storyTextElement.innerHTML = "Seterusnya, seekor anak monyet yang merupakan anak kepada ketua kepada sekumpulan monyet tadi bertanya tentang apa yang dimakan oleh Si Kura-Kura. Dia mengatakan bahawa disedang memakan keturunan anak monyet dengan nada yang marah. Anak monyet tersebut melarikan diri pulang kepada ayah dan menceritakan tentang apa yang berlaku. Ketua monyet marah lalu mengarahkan sekumpulan monyet mengikut dia dan anaknya untuk mencari Si Kura-Kura. Apabila mereka menjumpai Si Kura-Kura berdekatan dengan sebuah kolam. Dia segera meneggelamkan dirinya ke dasar kolam tersebut. Ketua monyet terduduk kerana buntu memikirkan cara untuk menangkap Si Kura-Kura. Tiba-tiba, datang makhluk halus bernama Tok Buyi menghampiri ketua monyet tersebut bertanya tentang masalah yang dihadapinya. Ketua monyet menerangkan kepada Tok Buyi akan situasi yang dihadapinya. Setelah itu, Tok Buyi membuat keputusan untuk menolong ketua monyet. Tok Buyi menghadap ke arah kolam dan melafazkan sesuatu lalu menyedut air di dalam kolam dengan mulut nya. Maka, kelihatanlah Si Kura-Kura di dasar kolam tersebut. Lalu kumpulan monyet mengepung dan menangkap Si Kura-Kura di dasar kolam tersebut. Ketua monyet berdialog dengan Si Kura-Kura tentang kenyataan bahawa dia telah memakan keturunannya. Si Kura-Kura menceritakan kisah hidupnya yang musnah hanya kerana disebabkan pisang emas. Namun, cerita Si Kura-Kura langsung tak dipercayai oleh ketua monyet tersebut. Akhir sekali, ketua monyet menamatkan riwayat Si Kura-Kura dengan menikam kepalanya kerana marah atas pengakuan Si Kura-Kura yang membunuh anak buahnya.";
+            showMoreBtn.style.display = 'none';
+        }
+    </script>
+
+</body>
+</html>
