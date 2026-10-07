@@ -17,12 +17,15 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
             padding: 0;
-            color: #333;
             min-height: 100vh;
+            color: #333;
             overflow-x: hidden;
         }
 
-        /* Video Background */
+        /* =========================
+           VIDEO BACKGROUND
+        ========================= */
+
         #video-container {
             position: fixed;
             top: 0;
@@ -39,7 +42,7 @@
             object-fit: cover;
         }
 
-        /* Dark overlay for better readability */
+        /* Dark overlay */
         #video-container::after {
             content: "";
             position: absolute;
@@ -50,7 +53,11 @@
             background: rgba(0, 0, 0, 0.25);
         }
 
-        /* Navigation */
+
+        /* =========================
+           NAVIGATION BAR
+        ========================= */
+
         nav {
             background-color: #12251b;
             overflow: hidden;
@@ -61,7 +68,7 @@
         nav a {
             float: left;
             display: block;
-            color: rgb(240, 235, 235);
+            color: #f0ebeb;
             text-align: center;
             padding: 20px 22px;
             text-decoration: none;
@@ -73,12 +80,16 @@
             color: #12251b;
         }
 
-        /* Header */
+
+        /* =========================
+           HEADER
+        ========================= */
+
         header {
             background-color: rgba(80, 170, 129, 0.75);
             color: white;
             text-align: center;
-            padding: 35px 20px;
+            padding: 35px 25px;
             margin: 20px auto;
             max-width: 1100px;
             border-radius: 15px;
@@ -86,15 +97,20 @@
 
         header h1 {
             color: white;
-            margin-bottom: 15px;
+            margin-top: 0;
+            margin-bottom: 20px;
         }
 
         header p {
             line-height: 1.7;
-            margin: 10px 0;
+            margin: 12px 0;
         }
 
-        /* Language Section */
+
+        /* =========================
+           LANGUAGE SECTION
+        ========================= */
+
         section {
             max-width: 500px;
             margin: 50px auto 120px;
@@ -110,7 +126,11 @@
             margin-bottom: 25px;
         }
 
-        /* Language Buttons */
+
+        /* =========================
+           LANGUAGE OPTIONS
+        ========================= */
+
         .language-option {
             display: block;
             margin: 15px 0;
@@ -134,7 +154,27 @@
             transform: scale(1.2);
         }
 
-        /* Footer */
+
+        /* =========================
+           LANGUAGE MESSAGE
+        ========================= */
+
+        #language-message {
+            display: none;
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #fff3cd;
+            color: #664d03;
+            border: 1px solid #ffecb5;
+            border-radius: 8px;
+            line-height: 1.5;
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================= */
+
         footer {
             background-color: rgba(50, 185, 131, 0.9);
             color: #333;
@@ -149,7 +189,11 @@
             margin: 8px;
         }
 
-        /* Mobile Responsive */
+
+        /* =========================
+           MOBILE RESPONSIVE
+        ========================= */
+
         @media screen and (max-width: 768px) {
 
             nav a {
@@ -171,111 +215,197 @@
                 margin: 30px 15px 100px;
             }
         }
+
     </style>
 </head>
 
+
 <body>
 
-    <!-- Video Background -->
+
+    <!-- =========================
+         VIDEO BACKGROUND
+    ========================= -->
+
     <div id="video-container">
-        <video id="video-background" autoplay muted loop playsinline>
-            <source src="trailer/trailer.mp4" type="video/mp4">
+
+        <video
+            id="video-background"
+            autoplay
+            muted
+            loop
+            playsinline>
+
+            <source
+                src="trailer/trailer.mp4"
+                type="video/mp4">
+
             Your browser does not support the video tag.
+
         </video>
+
     </div>
 
-    <!-- Navigation -->
+
+    <!-- =========================
+         NAVIGATION
+    ========================= -->
+
     <nav>
-        <a href="index.html">Home</a>
-        <a href="story-synopsis.html">Sinopsis Buku Cerita</a>
-        <a href="scan-the-book.html">Sila Imbas Buku Disini!</a>
-        <a href="about-us.html">Mengenai Kami</a>
+
+        <a href="index.html">
+            Home
+        </a>
+
+        <a href="story-synopsis.html">
+            Sinopsis Buku Cerita
+        </a>
+
+        <a href="scan-the-book.html">
+            Sila Imbas Buku Disini!
+        </a>
+
+        <a href="about-us.html">
+            Mengenai Kami
+        </a>
+
     </nav>
 
-    <!-- Header -->
+
+    <!-- =========================
+         INTRODUCTION
+    ========================= -->
+
     <header>
-        <h1>Selamat Datang ke ARbook Group 2!</h1>
+
+        <h1>
+            Selamat Datang ke ARbook Group 2!
+        </h1>
 
         <p>
-            Temukan kisah menarik dan nikmati jalan cerita yang menarik ini.
-            Selamat membaca dan menjelajahi buku kami!
+            Temukan kisah menarik dan nikmati jalan cerita
+            yang menarik ini. Selamat membaca dan menjelajahi
+            buku kami!
         </p>
 
         <p>
-            Antara cerita rakyat Sabah yang menjadi pilihan projek kami ialah
+            Antara cerita rakyat Sabah yang menjadi pilihan
+            projek kami ialah
             <strong>"Kura-Kura & Monyet"</strong>.
             Selami cerita ini melalui teknologi AR yang kami cipta.
         </p>
 
         <p>
-            Ia bukan sekadar buku; ia adalah satu perjalanan interaktif
-            yang penuh dengan pembelajaran dan keseronokan.
-            <br>
-            Sertai kami dalam pengembaraan ini, di mana kreativiti memenuhi
-            teknologi untuk mencipta pengalaman buku AR yang unik dan menarik!
+            Ia bukan sekadar buku; ia adalah satu perjalanan
+            interaktif yang penuh dengan pembelajaran dan keseronokan.
+            <br><br>
+
+            Sertai kami dalam pengembaraan ini, di mana kreativiti
+            memenuhi teknologi untuk mencipta pengalaman buku AR
+            yang unik dan menarik!
         </p>
+
     </header>
 
-    <!-- Language Selection -->
+
+    <!-- =========================
+         LANGUAGE SELECTION
+    ========================= -->
+
     <section>
 
-        <h2>Sila Pilih Bahasa:</h2>
+        <h2>
+            Sila Pilih Bahasa:
+        </h2>
+
 
         <label class="language-option">
+
             <input
                 type="radio"
                 name="language"
                 value="Bahasa Melayu"
-                onclick="selectLanguage('BM')"
-            >
+                onclick="selectLanguage('BM')">
+
             Bahasa Melayu
+
         </label>
 
+
         <label class="language-option">
+
             <input
                 type="radio"
                 name="language"
                 value="Dusun"
-                onclick="selectLanguage('Dusun')"
-            >
+                onclick="selectLanguage('Dusun')">
+
             Dusun
+
         </label>
+
+
+        <!-- Message -->
+        <div id="language-message"></div>
 
     </section>
 
-    <!-- Footer -->
+
+    <!-- =========================
+         FOOTER
+    ========================= -->
+
     <footer>
+
         <p>
             &copy; 2024 KURA-KURA & MONYET.
             ARBook (Group 2). UMSKAL
         </p>
+
     </footer>
+
+
+    <!-- =========================
+         JAVASCRIPT
+    ========================= -->
 
     <script>
 
         function selectLanguage(language) {
 
+            const message =
+                document.getElementById("language-message");
+
+
             if (language === "BM") {
 
-                /*
-                 * Change this filename to the actual
-                 * Bahasa Melayu page used by your project.
-                 */
-                window.location.href = "BM/index.html";
+                message.style.display = "block";
 
-            } else if (language === "Dusun") {
+                message.innerHTML =
+                    "<strong>Bahasa Melayu</strong><br>" +
+                    "Versi Bahasa Melayu sedang dibangunkan. " +
+                    "Sila teruskan ke bahagian buku cerita " +
+                    "untuk melihat kandungan projek kami.";
 
-                /*
-                 * Change this filename to the actual
-                 * Dusun page used by your project.
-                 */
-                window.location.href = "Dusun/index.html";
+            }
+
+
+            else if (language === "Dusun") {
+
+                message.style.display = "block";
+
+                message.innerHTML =
+                    "<strong>Bahasa Dusun</strong><br>" +
+                    "Versi Bahasa Dusun sedang dibangunkan. " +
+                    "Sila teruskan ke bahagian buku cerita " +
+                    "untuk melihat kandungan projek kami.";
 
             }
 
         }
 
     </script>
+
 
 </body>
 
