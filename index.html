@@ -5,26 +5,79 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>KURA-KURA & MONYET</title>
 
     <style>
-        * {
-            box-sizing: border-box;
-        }
-
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
             padding: 0;
-            min-height: 100vh;
+            background: url('picture/homebg.png') center/cover;
             color: #333;
-            overflow-x: hidden;
+            perspective: 1000px;
+            height: 100vh;
         }
 
-        /* =========================
-           VIDEO BACKGROUND
-        ========================= */
+        nav {
+            background-color: #12251b;
+            overflow: hidden;
+        }
+
+        nav a {
+            float: left;
+            display: block;
+            color: rgb(240, 235, 235);
+            text-align: center;
+            padding: 20px 22px;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+
+        nav a:hover {
+            background-color: #75e4bd;
+        }
+
+        header {
+            background-color: #50aa81b6;
+            color: white;
+            text-align: center;
+            padding: 2em;
+            margin-bottom: 1em;
+        }
+
+        section {
+            max-width: 500px;
+            margin: 50px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+
+        h1,
+        h2 {
+            color: #000000;
+        }
+
+        label {
+            display: block;
+            margin: 10px 0;
+        }
+
+        p {
+            line-height: 1.5;
+        }
+
+        footer {
+            background-color: #32b9839d;
+            color: #333;
+            text-align: center;
+            padding: 0.1em;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
 
         #video-container {
             position: fixed;
@@ -33,7 +86,7 @@
             width: 100%;
             height: 100%;
             overflow: hidden;
-            z-index: -2;
+            z-index: -1;
         }
 
         #video-background {
@@ -42,214 +95,30 @@
             object-fit: cover;
         }
 
-        /* Dark overlay */
-        #video-container::after {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.25);
-        }
-
-
-        /* =========================
-           NAVIGATION BAR
-        ========================= */
-
-        nav {
-            background-color: #12251b;
-            overflow: hidden;
-            position: relative;
-            z-index: 10;
-        }
-
-        nav a {
-            float: left;
-            display: block;
-            color: #f0ebeb;
-            text-align: center;
-            padding: 20px 22px;
-            text-decoration: none;
-            transition: 0.3s;
-        }
-
-        nav a:hover {
-            background-color: #75e4bd;
-            color: #12251b;
-        }
-
-
-        /* =========================
-           HEADER
-        ========================= */
-
-        header {
-            background-color: rgba(80, 170, 129, 0.75);
-            color: white;
-            text-align: center;
-            padding: 35px 25px;
-            margin: 20px auto;
-            max-width: 1100px;
-            border-radius: 15px;
-        }
-
-        header h1 {
-            color: white;
-            margin-top: 0;
-            margin-bottom: 20px;
-        }
-
-        header p {
-            line-height: 1.7;
-            margin: 12px 0;
-        }
-
-
-        /* =========================
-           LANGUAGE SECTION
-        ========================= */
-
-        section {
-            max-width: 500px;
-            margin: 50px auto 120px;
-            background-color: rgba(255, 255, 255, 0.95);
-            padding: 30px;
-            border-radius: 15px;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.25);
-            text-align: center;
-        }
-
-        section h2 {
-            color: #12251b;
-            margin-bottom: 25px;
-        }
-
-
-        /* =========================
-           LANGUAGE OPTIONS
-        ========================= */
-
-        .language-option {
-            display: block;
-            margin: 15px 0;
-            padding: 15px;
-            background-color: #e8f7f0;
-            border: 2px solid #50aa81;
-            border-radius: 10px;
-            cursor: pointer;
-            transition: 0.3s;
-            font-size: 17px;
-            text-align: left;
-        }
-
-        .language-option:hover {
-            background-color: #75e4bd;
-            transform: scale(1.02);
-        }
-
-        .language-option input {
-            margin-right: 10px;
-            transform: scale(1.2);
-        }
-
-
-        /* =========================
-           LANGUAGE MESSAGE
-        ========================= */
-
+        /* Language message */
         #language-message {
             display: none;
-            margin-top: 20px;
-            padding: 15px;
-            background-color: #fff3cd;
-            color: #664d03;
-            border: 1px solid #ffecb5;
+            margin-top: 15px;
+            padding: 10px;
+            background-color: #e8f5ee;
             border-radius: 8px;
-            line-height: 1.5;
-        }
-
-
-        /* =========================
-           FOOTER
-        ========================= */
-
-        footer {
-            background-color: rgba(50, 185, 131, 0.9);
-            color: #333;
             text-align: center;
-            padding: 5px;
-            position: fixed;
-            width: 100%;
-            bottom: 0;
         }
-
-        footer p {
-            margin: 8px;
-        }
-
-
-        /* =========================
-           MOBILE RESPONSIVE
-        ========================= */
-
-        @media screen and (max-width: 768px) {
-
-            nav a {
-                float: none;
-                width: 100%;
-                padding: 15px;
-            }
-
-            header {
-                margin: 10px;
-                padding: 25px 15px;
-            }
-
-            header h1 {
-                font-size: 25px;
-            }
-
-            section {
-                margin: 30px 15px 100px;
-            }
-        }
-
     </style>
 </head>
 
-
 <body>
 
-
-    <!-- =========================
-         VIDEO BACKGROUND
-    ========================= -->
-
+    <!-- Video background -->
     <div id="video-container">
 
-        <video
-            id="video-background"
-            autoplay
-            muted
-            loop
-            playsinline>
-
-            <source
-                src="trailer/trailer.mp4"
-                type="video/mp4">
-
+        <video id="video-background" autoplay muted loop>
+            <source src="trailer/trailer.mp4" type="video/mp4">
             Your browser does not support the video tag.
-
         </video>
 
     </div>
 
-
-    <!-- =========================
-         NAVIGATION
-    ========================= -->
 
     <nav>
 
@@ -272,10 +141,6 @@
     </nav>
 
 
-    <!-- =========================
-         INTRODUCTION
-    ========================= -->
-
     <header>
 
         <h1>
@@ -283,34 +148,24 @@
         </h1>
 
         <p>
-            Temukan kisah menarik dan nikmati jalan cerita
-            yang menarik ini. Selamat membaca dan menjelajahi
-            buku kami!
+            Temukan kisah menarik dan nikmati jalan cerita yang menarik ini.
+            Selamat membaca dan menjelajahi buku kami!
         </p>
 
         <p>
-            Antara cerita rakyat Sabah yang menjadi pilihan
-            projek kami ialah
-            <strong>"Kura-Kura & Monyet"</strong>.
-            Selami cerita ini melalui teknologi AR yang kami cipta.
-        </p>
-
-        <p>
-            Ia bukan sekadar buku; ia adalah satu perjalanan
-            interaktif yang penuh dengan pembelajaran dan keseronokan.
-            <br><br>
-
-            Sertai kami dalam pengembaraan ini, di mana kreativiti
-            memenuhi teknologi untuk mencipta pengalaman buku AR
-            yang unik dan menarik!
+            Antara cerita rakyat Sabah yang menjadi pilihan projek kami ialah
+            "Kura-Kura & Monyet". Selami cerita ini melalui teknologi AR yang
+            kami cipta.
+            <br>
+            Ia bukan sekadar buku; ia adalah satu perjalanan interaktif yang
+            penuh dengan pembelajaran dan keseronokan.
+            <br>
+            Sertai kami dalam pengembaraan ini, di mana kreativiti memenuhi
+            teknologi untuk mencipta pengalaman buku AR yang unik dan menarik!
         </p>
 
     </header>
 
-
-    <!-- =========================
-         LANGUAGE SELECTION
-    ========================= -->
 
     <section>
 
@@ -318,89 +173,79 @@
             Sila Pilih Bahasa:
         </h2>
 
-
-        <label class="language-option">
+        <label for="language1">
 
             <input
                 type="radio"
+                id="language1"
                 name="language"
                 value="Bahasa Melayu"
-                onclick="selectLanguage('BM')">
+                onclick="navigateToBahasaMelayu()"
+                checked
+            >
 
             Bahasa Melayu
 
         </label>
 
 
-        <label class="language-option">
+        <label for="language2">
 
             <input
                 type="radio"
+                id="language2"
                 name="language"
                 value="Dusun"
-                onclick="selectLanguage('Dusun')">
+                onclick="navigateToDusun()"
+            >
 
             Dusun
 
         </label>
 
 
-        <!-- Message -->
+        <!-- Message will appear here -->
         <div id="language-message"></div>
 
     </section>
 
 
-    <!-- =========================
-         FOOTER
-    ========================= -->
-
     <footer>
 
         <p>
             &copy; 2024 KURA-KURA & MONYET.
-            ARBook (Group 2). UMSKAL
+            ARBook (Group2). UMSKAL
         </p>
 
     </footer>
 
 
-    <!-- =========================
-         JAVASCRIPT
-    ========================= -->
-
     <script>
 
-        function selectLanguage(language) {
+        function navigateToBahasaMelayu() {
 
-            const message =
+            var message =
                 document.getElementById("language-message");
 
+            message.style.display = "block";
 
-            if (language === "BM") {
+            message.innerHTML =
+                "Bahasa Melayu dipilih. " +
+                "Halaman Bahasa Melayu belum tersedia.";
 
-                message.style.display = "block";
-
-                message.innerHTML =
-                    "<strong>Bahasa Melayu</strong><br>" +
-                    "Versi Bahasa Melayu sedang dibangunkan. " +
-                    "Sila teruskan ke bahagian buku cerita " +
-                    "untuk melihat kandungan projek kami.";
-
-            }
+        }
 
 
-            else if (language === "Dusun") {
+        function navigateToDusun() {
 
-                message.style.display = "block";
+            var message =
+                document.getElementById("language-message");
 
-                message.innerHTML =
-                    "<strong>Bahasa Dusun</strong><br>" +
-                    "Versi Bahasa Dusun sedang dibangunkan. " +
-                    "Sila teruskan ke bahagian buku cerita " +
-                    "untuk melihat kandungan projek kami.";
+            message.style.display = "block";
 
-            }
+            message.innerHTML =
+                "Bahasa Dusun dipilih. " +
+                "Halaman Bahasa Dusun belum tersedia.";
 
         }
 
